@@ -17,7 +17,8 @@ def main():
             [sg.Text('Customer name', text_color='#000000', background_color='white', font=('Helvetica', 16), pad=((0, 0), (20, 0)))],
             [sg.InputText('', size=(30, 1), key='name', font=('Helvetica', 16))],
             [sg.Text('Completed tasks', text_color='#000000', background_color='white', font=('Helvetica', 16), pad=((0, 0), (20, 0)))],
-            [sg.InputText('', size=(30, 1), key='tasks', font=('Helvetica', 16))],
+            [sg.Multiline('', size=(30, 4), key='tasks', font=('Helvetica', 16))],
+
             [sg.Button('Save', button_color=('#000000', '#FFD43B'), size=(10, 2))],
             [sg.Text('00:00:00', font=('Helvetica', 20), key='timer', text_color='#000000', background_color='white')],
               
@@ -26,9 +27,9 @@ def main():
             [sg.CalendarButton('End date', format='%Y-%m-%d', key='-END-', border_width=1, button_color=('#000000', '#306998'))],
 [
     [sg.Text('Start_time:', font=('Helvetica', 20), text_color='#000000', background_color='white', pad=((0, 0), (20, 0))),
-     sg.Text('00:00:00', font=('Helvetica', 20), key='start_time', text_color='#000000', background_color='white')],
+     sg.Text('00:00:00', font=('Helvetica', 20), key='start_time', text_color='#000000', background_color='white', pad=((0, 0), (20, 0)))],
     [sg.Text('End_time:', font=('Helvetica', 20), text_color='#000000', background_color='white', pad=((0, 0), (20, 0))),
-     sg.Text('00:00:00', font=('Helvetica', 20), key='end_time', text_color='#000000', background_color='white')]
+     sg.Text('00:00:00', font=('Helvetica', 20), key='end_time', text_color='#000000', background_color='white', pad=((0, 0), (20, 0)))]
 ],
 
 
@@ -40,7 +41,7 @@ def main():
             ]
 
     # Create the window
-    window = sg.Window('Bence\'s Stopwatch', layout, element_justification='c', size=(500, 800), margins=(50, 50))
+    window = sg.Window('Bence\'s Stopwatch', layout, element_justification='c', size=(500, 900), margins=(50, 50))
 
     # Initialize variables
     start_time, end_time, elapsed_time = None, None, 0
